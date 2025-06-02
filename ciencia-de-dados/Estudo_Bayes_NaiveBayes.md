@@ -8,9 +8,9 @@ O Teorema de Bayes é uma fórmula fundamental em probabilidade e estatística q
 
 ### Fórmula do Teorema de Bayes
 
-\[
-  P(A|B) = \frac{P(A) \times P(B|A)}{P(B)}
-\]
+```
+P(A|B) = ( P(A) * P(B|A) ) / P(B)
+```
 
 - **P(A)**: Probabilidade de A ocorrer (antes de saber B) — **probabilidade a priori**.
 - **P(B|A)**: Probabilidade de B ocorrer, dado que A ocorreu — **verossimilhança**.
@@ -30,31 +30,27 @@ Escolhemos **aleatoriamente** uma moeda (50% para cada) e jogamos uma vez.
 
 #### Passo 1: Qual a chance de dar "Cara" no geral?
 
-\[
-P(Cara) = P(Moeda\ Justa) \times P(Cara|Justa) + P(Moeda\ Viciada) \times P(Cara|Viciada)
-\]
-\[
-P(Cara) = 0,5 \times 0,5 + 0,5 \times 1 = 0,25 + 0,5 = 0,75
-\]
+```
+P(Cara) = P(Moeda Justa) * P(Cara|Justa) + P(Moeda Viciada) * P(Cara|Viciada)
+P(Cara) = 0,5 * 0,5 + 0,5 * 1 = 0,25 + 0,5 = 0,75
+```
 
 **Ou seja, 75% de chance de dar "Cara".**
 
 #### Passo 2: Se soubermos que a moeda é justa, qual a chance de dar "Cara"?
 
-\[
-P(Cara|Moeda\ Justa) = 0,5 = 50\%
-\]
+```
+P(Cara|Moeda Justa) = 0,5 = 50%
+```
 
 #### Passo 3: Se der "Cara", qual a chance da moeda ser a viciada?
 
 Aqui usamos o Teorema de Bayes:
 
-\[
-P(Viciada|Cara) = \frac{P(Viciada) \times P(Cara|Viciada)}{P(Cara)}
-\]
-\[
-P(Viciada|Cara) = \frac{0,5 \times 1}{0,75} = \frac{0,5}{0,75} \approx 0,666\ (\text{66,6%})
-\]
+```
+P(Viciada|Cara) = ( P(Viciada) * P(Cara|Viciada) ) / P(Cara)
+P(Viciada|Cara) = (0,5 * 1) / 0,75 = 0,5 / 0,75 ≈ 0,666 (66,6%)
+```
 
 ---
 
@@ -69,9 +65,9 @@ P(Viciada|Cara) = \frac{0,5 \times 1}{0,75} = \frac{0,5}{0,75} \approx 0,666\ (\
 
 ### Fórmula do Naive Bayes
 
-\[
-P(C|X) = \frac{P(X|C) \times P(C)}{P(X)}
-\]
+```
+P(C|X) = ( P(X|C) * P(C) ) / P(X)
+```
 
 - **C**: Classe (exemplo: "spam", "não spam", "doente", "saudável").
 - **X**: Vetor de características (features).
@@ -80,9 +76,11 @@ P(C|X) = \frac{P(X|C) \times P(C)}{P(X)}
 
 1. Calcula a probabilidade de cada classe com base nas features do exemplo.
 2. Assume independência entre as features:
-   \[
-   P(X|C) = P(x_1|C) \times P(x_2|C) \times ... \times P(x_n|C)
-   \]
+
+   ```
+   P(X|C) = P(x1|C) * P(x2|C) * ... * P(xn|C)
+   ```
+
 3. Escolhe a classe com **maior probabilidade**.
 
 ---
@@ -106,12 +104,12 @@ Novo paciente com pressão = 140.
 
 Para cada classe, usamos a fórmula da **distribuição normal**:
 
-\[
-P(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
-\]
+```
+P(x | μ, σ²) = (1 / sqrt(2πσ²)) * exp( - (x - μ)² / (2σ²) )
+```
 
-- Para "doente": \(\mu=150\), \(\sigma^2=25\), \(x=140\)
-- Para "saudável": \(\mu=120\), \(\sigma^2=16\), \(x=140\)
+- Para "doente": μ = 150, σ² = 25, x = 140
+- Para "saudável": μ = 120, σ² = 16, x = 140
 
 Basta calcular os dois valores e comparar!
 
