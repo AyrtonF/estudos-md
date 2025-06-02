@@ -9,7 +9,7 @@ O Teorema de Bayes é uma fórmula fundamental em probabilidade e estatística q
 ### Fórmula do Teorema de Bayes
 
 \[
-P(A|B) = \frac{P(A) \times P(B|A)}{P(B)}
+  P(A|B) = \frac{P(A) \times P(B|A)}{P(B)}
 \]
 
 - **P(A)**: Probabilidade de A ocorrer (antes de saber B) — **probabilidade a priori**.
